@@ -2,7 +2,6 @@ import streamlit as st
 import time
 import sys
 
-# Menghilangkan batas konversi integer besar (aman karena hasil tidak ditampilkan penuh)
 sys.set_int_max_str_digits(0)
 
 # FUNGSI ALGORITMA
@@ -53,7 +52,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("📊 Analisis Kompleksitas Algoritma Pangkat")
+st.title(" Analisis Kompleksitas Algoritma Pangkat")
 st.write(
     "Perbandingan **Algoritma Iteratif** dan **Algoritma Rekursif** "
     "berdasarkan waktu eksekusi dan kompleksitas algoritma."
@@ -63,7 +62,7 @@ st.write(
 # INPUT USER
 
 with st.sidebar:
-    st.header("🔢 Input Data")
+    st.header(" Input Data")
 
     basis = st.number_input(
         "Masukkan Basis (x)",
@@ -89,7 +88,7 @@ with st.sidebar:
         step=10
     )
 
-tombol_hitung = st.button("🚀 Bandingkan Algoritma")
+tombol_hitung = st.button(" Bandingkan Algoritma")
 
 
 # PROSES & OUTPUT
@@ -110,7 +109,7 @@ if tombol_hitung:
     waktu_r = time.perf_counter() - start
 
     with col1:
-        st.subheader("🔄 Algoritma Iteratif")
+        st.subheader(" Algoritma Iteratif")
         st.write(
             f"Hasil {basis} pangkat {eksponen}: {pangkat_iteratif(basis, eksponen)}")
         st.write(f"Jumlah digit hasil: **{len(str(hasil_i))} digit**")
@@ -121,7 +120,7 @@ if tombol_hitung:
         )
 
     with col2:
-        st.subheader("🪞 Algoritma Rekursif")
+        st.subheader(" Algoritma Rekursif")
         st.write(
             f"Hasil {basis} pangkat {eksponen}: {pangkat_rekursif(basis, eksponen)}")
         st.write(f"Jumlah digit hasil: **{len(str(hasil_r))} digit**")
@@ -136,7 +135,7 @@ if tombol_hitung:
     
     # GRAFIK KOMPLEKSITAS
 
-    st.subheader("📈 Grafik Kompleksitas Berdasarkan Input x dan n")
+    st.subheader(" Grafik Kompleksitas Berdasarkan Input x dan n")
 
     eksponen_list = list(range(1, n_grafik + 1))
     waktu_iter = []
@@ -157,7 +156,7 @@ if tombol_hitung:
     
     # ANALISIS OTOMATIS
 
-    st.subheader("🧠 Analisis Hasil")
+    st.subheader(" Analisis Hasil")
 
     if waktu_i < waktu_r:
         st.success(

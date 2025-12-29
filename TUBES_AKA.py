@@ -5,13 +5,9 @@ import sys
 # Menghilangkan batas konversi integer besar (aman karena hasil tidak ditampilkan penuh)
 sys.set_int_max_str_digits(0)
 
-# =============================
 # FUNGSI ALGORITMA
-# =============================
 
 # Iteratif O(n)
-
-
 def pangkat_iteratif(basis, eksponen):
     hasil = 1
     for _ in range(eksponen):
@@ -26,9 +22,8 @@ def pangkat_rekursif(basis, eksponen):
     return basis * pangkat_rekursif(basis, eksponen - 1)
 
 
-# =============================
+
 # FUNGSI UKUR WAKTU (UNTUK GRAFIK)
-# =============================
 
 def waktu_iteratif(basis, n):
     start = time.perf_counter()
@@ -49,9 +44,9 @@ def waktu_rekursif(basis, n):
     return time.perf_counter() - start
 
 
-# =============================
+
 # UI STREAMLIT
-# =============================
+
 
 st.set_page_config(
     page_title="Analisis Kompleksitas Algoritma Pangkat",
@@ -64,9 +59,8 @@ st.write(
     "berdasarkan waktu eksekusi dan kompleksitas algoritma."
 )
 
-# =============================
+
 # INPUT USER
-# =============================
 
 with st.sidebar:
     st.header("🔢 Input Data")
@@ -97,9 +91,9 @@ with st.sidebar:
 
 tombol_hitung = st.button("🚀 Bandingkan Algoritma")
 
-# =============================
+
 # PROSES & OUTPUT
-# =============================
+
 
 if tombol_hitung:
 
@@ -139,9 +133,8 @@ if tombol_hitung:
 
     st.divider()
 
-    # =============================
+    
     # GRAFIK KOMPLEKSITAS
-    # =============================
 
     st.subheader("📈 Grafik Kompleksitas Berdasarkan Input x dan n")
 
@@ -161,9 +154,8 @@ if tombol_hitung:
 
     st.line_chart(data_chart, x="Eksponen (n)")
 
-    # =============================
+    
     # ANALISIS OTOMATIS
-    # =============================
 
     st.subheader("🧠 Analisis Hasil")
 
